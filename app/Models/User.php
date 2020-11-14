@@ -16,11 +16,21 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
+    public $table = 'users';
+
+    // protected $dates = [
+    //     'created_at',
+    //     'updated_at',
+    // ];
+
+    protected $guarded = [];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,4 +50,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Usergroup(){
+
+        return $this->belongsTo("App\Models\UserGroup", "user_group_id", "id");
+    }
+
+    public function Company(){
+
+        return $this->belongsTo("App\Models\Company", "company_id", "id");
+    }
 }
