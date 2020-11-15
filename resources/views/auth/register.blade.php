@@ -12,6 +12,8 @@
 </head>
 <body>
 
+    
+
     <!-- Page Wrapper -->
     <div class="lgn-background" style="background-image: url('{{asset('images/slider-law-1.jpg') }}');" >
         <div class="lgn-wrapper">
