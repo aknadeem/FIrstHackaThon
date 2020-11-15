@@ -1,73 +1,54 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!-- Mirrored from pepdev.com/template/apez/admin/login-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Nov 2020 22:01:14 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> SC | Login</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('dist/css/style.css') }} " />
+</head>
+<body>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <!-- Page Wrapper -->
+    <div class="lgn-background" style="background-image: url('{{asset('images/slider-law-1.jpg') }}');" >
+        <div class="lgn-wrapper">
+            <div class="lgn-logo text-center">
+                <a><img src="{{ asset('images/logo-white.png') }}" alt=""></a>
             </div>
+            <div id="login-form" class="lgn-form ">
+                <form class="form-vertical" autocomplete="off">
+                    <div class="lgn-input form-group" >
+                        <div class="col-sm-12">
+                            <input class="form-control" type="email" name="email" id="lgn-mail" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="lgn-input form-group">
+                        <div class="col-sm-12">
+                            <input type="password" name="password" id="lgn-pass" class="form-control" placeholder="Password" required>
+                        </div>  
+                    </div>
+                    <div class="lgn-forgot">
+                        <p><strong>if you don't have an account yet!<br> <a href="{{ route('register') }}">Click here to register.</a>
+                    </div>
+                    <div class="lgn-submit">
+                        <button type="submit" id="lgn-submit" class="btn btn-primary btn-pill btn-lg" name="login">Login</button>
+                    </div>
+                </form>
+            </div> 
         </div>
     </div>
-</div>
-@endsection
+
+    <!-- Include js files -->
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="{{ asset('assets/plugin/jquery/jquery-3.3.1.min.js') }}"></script>
+    <!-- Popper Plugin -->
+    <script type="text/javascript" src="{{ asset('assets/plugin/popper/popper.min.js') }}"></script>
+    <!-- Bootstrap Framework -->
+    <script type="text/javascript" src="{{ asset('assets/plugin/bootstrap/bootstrap.min.js') }} "></script>
+</body>
+</html>
+
+
